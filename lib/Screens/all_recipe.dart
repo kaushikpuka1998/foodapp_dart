@@ -1,15 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:food_app/Widgets/numberRecipe.dart';
+import 'package:food_app/Widgets/recipelisttile.dart';
 
 
 class AllrecipeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.black,
         child: CustomScrollView(
             slivers: [
              CupertinoSliverNavigationBar(
-               largeTitle: Text("All Recipes"),
+               backgroundColor: CupertinoColors.black,
+               largeTitle: Text("All Recipes",style: TextStyle(color: CupertinoColors.white),),
                trailing: CupertinoButton(
                  onPressed: ()
                  {
@@ -24,7 +27,7 @@ class AllrecipeScreen extends StatelessWidget {
              ),
               SliverList(
                   delegate: SliverChildListDelegate([
-
+                    RecipeListTile(),
                     Numberrecipe()
                   ]))
             ],
